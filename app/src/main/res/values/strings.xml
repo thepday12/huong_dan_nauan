@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Hướng dẫn nấu ăn</string>
+    <string name="title_menu_home">Bí mật của món ăn ngon</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_idea">Gợi ý</string>
+    <string name="title_favorite">Yêu thích</string>
+    <string name="title_bua_sang">Bữa sáng</string>
+    <string name="title_bua_trua">Bữa trưa</string>
+    <string name="title_bua_toi">Bữa tối</string>
+
+    <string name="message_favorite">Đã thêm vào mục món ăn yêu thích</string>
+    <string name="message_unfavorite">Đã xoá khỏi mục món ăn yêu thích</string>
+    <string name="message_favorite_exception">Đã xảy ra lỗi</string>
+
+    <string name="message_favorite_null">Chưa có món ăn được thích</string>
+
+    <string name="bt_watch_video">Hướng dẫn video</string>
+    <string name="bt_nguyen_lieu">Nguyên liệu</string>
+
+
+    <string name="transition_icon">icon_transition</string>
+    <string name="transition_name">name_transition</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".view.ListMonAnActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/viewIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_default"
+                android:transitionName="@string/transition_icon"
+                app:layout_constraintDimensionRatio="2:1"
+                tools:ignore="UnusedAttribute"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/viewIcon"
+            android:layout_marginTop="-40dp"
+            android:background="#99000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:textColor="#eeeeee"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:transitionName="@string/transition_name"
+            tools:ignore="UnusedAttribute"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</LinearLayout>
