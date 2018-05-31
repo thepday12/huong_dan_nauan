@@ -16,6 +16,8 @@
 
     <string name="bt_watch_video">Hướng dẫn video</string>
     <string name="bt_nguyen_lieu">Nguyên liệu</string>
+    <string name="bt_quoc_gia">Pháp, Mỹ, Nhật,VN,..</string>
+    <string name="bt_cach_che_bien">Chiên, xào, kho,..</string>
 
 
     <string name="transition_icon">icon_transition</string>

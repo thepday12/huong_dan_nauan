@@ -12,8 +12,15 @@ public class MenuMonAn {
     public static List<MenuMonAn> getDanhSachLoaiMonAn() {
         List<MenuMonAn> arr = new ArrayList<MenuMonAn>();
         arr.add(new MenuMonAn("Món chiên", "ic_mon_chien"));
-        arr.add(new MenuMonAn("Món Rau", "ic_mon_rau"));
+        arr.add(new MenuMonAn("Món luộc", "ic_mon_luoc"));
         arr.add(new MenuMonAn("Món xào", "ic_mon_xao"));
+        return arr;
+    }
+    public static List<MenuMonAn> getDanhSachQuocGia() {
+        List<MenuMonAn> arr = new ArrayList<MenuMonAn>();
+        arr.add(new MenuMonAn("Việt Nam", "ic_viet_nam"));
+        arr.add(new MenuMonAn("Hàn Quốc", "ic_han_quoc"));
+        arr.add(new MenuMonAn("Âu Mỹ", "ic_au_my"));
         return arr;
     }
 

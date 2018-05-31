@@ -22,7 +22,7 @@ INSERT INTO tbl_mon_an (ten , nguyen_lieu ,che_bien , thoi_gian ,loai , hinh_anh
                          VALUES ('Cánh gà chiên nước mắm tỏi siêu ngon','10 củ lớn tỏi, băm nhỏ ;½ thìa đường;2 muỗng canh dấm gạo;½ chén nước mắm;3 muỗng canh nước cốt chanh tươi;1kg cánh gà;1 chén bột gạo;Dầu ăn;Tương ớt',
                                  'Chuẩn bị một chảo dầu nóng lên bếp, đun cho nóng già, cho tỏi băm nhuyễn vào phi thơm lên trong vòng 5 phút.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-3.jpg;Lấy một bát ăn cơm trộn hỗn hợp gồm:  đường, giấm và ¼ chén nước vào cùng. Khuấy thật đều tay. Sau đó, đổ vào nồi đang đun trên bếp.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-4.jpg;Cho nước mắm, nước cốt chanh và tương ớt vào một bát ăn cơm sạch. Sau đó bật bếp đun nóng hỗn hợp bên trên, cho hỗn hợp mắm vào đun cùng đến khi sôi thì tắt bếp.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-5.jpg;Lấy một hộp nhựa nắp kín đổ hỗn hợp đã vừa đun sôi vào sau đó để vào trong tủ lạnh 30 phút.;Chuẩn bị khay nướng và đặt cánh gà lên trên. Sau đó, rưới hỗn hợp mắm tỏi đã pha để trong tủ lạnh lên trên bề mặt cánh gà. Bọc kín lại bằng màng bọc thực phẩm để qua đêm trong tủ lạnh.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-2.jpg;Khi cánh gà đã ngấm sốt qua đêm, lấy cánh gà ra và để trong nhiệt độ phòng trong 15 phút. Đổ bột gạo vào bát và lắn cánh gà qua bột.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-7.jpg; Bật bếp, chiên cánh gà đến khi chúng chuyển sang màu vàng nâu khoảng 10 phút. Vớt ra để đĩa đã chuẩn bị lót 1 tờ giấy thấm dầu.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-8.jpg;Cho ½ sốt sốt còn lại vào đun trên lửa lớn trong 1 phút hoặc đến khi nó hơi sệt lại. Cho cánh gà vừa chiên và đảo cùng.;http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-9.jpg',
                                  30,
-                                 'mon_chien',
+                                 'mon_chien,viet_nam',
                                  'http://toinayangi.vn/wp-content/uploads/2016/11/cach-lam-ga-chien-nuoc-mam-10.jpg',
                                  'WdPZB-ESW4k');
  */
@@ -221,7 +221,7 @@ public class MySQLiteDatabase extends SQLiteOpenHelper{
 
     }
     public List<MonAn> getListMonRau() {
-        return getListMonAnByLoai("ic_mon_rau");
+        return getListMonAnByLoai("ic_mon_luoc");
 
     }
 
