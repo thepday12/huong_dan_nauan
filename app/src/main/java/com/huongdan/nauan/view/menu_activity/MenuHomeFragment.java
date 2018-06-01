@@ -1,6 +1,7 @@
 package com.huongdan.nauan.view.menu_activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,12 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.huongdan.nauan.R;
 import com.huongdan.nauan.adapter.MenuHomeAdapter;
 import com.huongdan.nauan.model.MenuMonAn;
+import com.huongdan.nauan.utils.Global;
 import com.huongdan.nauan.utils.animation.view_recycler.SlideInUpAnimator;
+import com.huongdan.nauan.view.ListMonAnActivity;
 
 public class MenuHomeFragment extends Fragment {
 
@@ -25,6 +30,8 @@ public class MenuHomeFragment extends Fragment {
     private RecyclerView rvMenuMonAn;
     private Context mContext;
     private Button btCachCheBien,btQuocGia;
+    private ImageButton btSearch;
+    private EditText etSearch;
     private MenuHomeAdapter menuCachCHeBienAdapter,menuQuocGiaAdapter;
 
     public static MenuHomeFragment newInstance() {
@@ -47,6 +54,8 @@ public class MenuHomeFragment extends Fragment {
         rvMenuMonAn = rootView.findViewById(R.id.rvMenuMonAn);
         btCachCheBien = rootView.findViewById(R.id.btCachCheBien);
         btQuocGia = rootView.findViewById(R.id.btQuocGia);
+        btSearch = rootView.findViewById(R.id.btSearch);
+        etSearch = rootView.findViewById(R.id.etSearch);
 
         configView();
         initListener();
@@ -68,6 +77,19 @@ public class MenuHomeFragment extends Fragment {
     }
 
     private void initListener(){
+        btSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = etSearch.getText().toString();
+                if(text!=null && !text.isEmpty()){
+                    Intent intent = new Intent(mContext, ListMonAnActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra(Global.EXTRA_NAME_KEY, text);
+                    mContext.startActivity(intent);
+                }
+            }
+        });
+
         btCachCheBien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

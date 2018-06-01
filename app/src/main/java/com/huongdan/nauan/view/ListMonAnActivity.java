@@ -36,6 +36,7 @@ public class ListMonAnActivity extends BaseActivity {
     private MySQLiteDatabase mySQLiteDatabase;
     private MonAnAdapter mAdapter;
     private String mLoaiMonAn;
+    private boolean isSearchView=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +65,24 @@ public class ListMonAnActivity extends BaseActivity {
         Intent intent = getIntent();
         String tenMonAn = intent.getStringExtra(Global.EXTRA_NAME_KEY);
         String hinhAnhMonAn = intent.getStringExtra(Global.EXTRA_IMAGE_KEY);
-        mLoaiMonAn = hinhAnhMonAn.replace("ic_","");
-        //Dat tieu de
-        setTitle(tenMonAn);
+        if(hinhAnhMonAn==null ||hinhAnhMonAn.isEmpty()){
+            isSearchView = true;
+            mLoaiMonAn = tenMonAn;
+            //Dat tieu de
+            setTitle("Tìm kiếm");
+
+        }else {
+            //Dat tieu de
+            setTitle(tenMonAn);
+            mLoaiMonAn = hinhAnhMonAn.replace("ic_", "");
+            //Thiet lap hien thi hinh anh
+            Glide.with(this)
+                    .load(MyUtils.getImage(this,hinhAnhMonAn))
+                    .into(ivIcon);
+        }
+
         tvName.setText(tenMonAn);
-        //Thiet lap hien thi hinh anh
-        Glide.with(this)
-                .load(MyUtils.getImage(this,hinhAnhMonAn))
-                .into(ivIcon);
+
         //Thiet lap che do hien thi dang grid cho Recyclerview
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         rvMonAn.setLayoutManager(layoutManager);
@@ -103,7 +114,11 @@ public class ListMonAnActivity extends BaseActivity {
 
         @Override
         protected List<MonAn> doInBackground(Void... voids) {
-            return mySQLiteDatabase.getListMonAnByLoai(mLoaiMonAn);
+            if(isSearchView){
+                return mySQLiteDatabase.getListMonAnByTen(mLoaiMonAn);
+            }else {
+                return mySQLiteDatabase.getListMonAnByLoai(mLoaiMonAn,"order by id DESC");
+            }
         }
 
         @Override

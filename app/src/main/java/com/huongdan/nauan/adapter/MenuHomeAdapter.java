@@ -75,18 +75,10 @@ public class MenuHomeAdapter extends RecyclerView
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(mContext, MailDetailActivity.class);
-//                intent.putExtra("MAIL_ID", menuMonAn.getId());
-//                mContext.startActivity(intent);
                 Intent intent = new Intent(mContext, ListMonAnActivity.class);
-//                ActivityOptionsCompat options = ActivityOptionsCompat.
-//                        makeSceneTransitionAnimation(mActivity,
-//                                holder.ivIcon,
-//                                ViewCompat.getTransitionName(holder.ivIcon));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra(Global.EXTRA_NAME_KEY, name);
                 intent.putExtra(Global.EXTRA_IMAGE_KEY, imageName);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
             }
         });

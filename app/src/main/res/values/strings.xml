@@ -8,6 +8,8 @@
     <string name="title_bua_trua">Bữa trưa</string>
     <string name="title_bua_toi">Bữa tối</string>
 
+    <string name="hint_search">Tìm kiếm món ăn theo tên...</string>
+
     <string name="message_favorite">Đã thêm vào mục món ăn yêu thích</string>
     <string name="message_unfavorite">Đã xoá khỏi mục món ăn yêu thích</string>
     <string name="message_favorite_exception">Đã xảy ra lỗi</string>
